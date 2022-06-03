@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { check } = require("express-validator");
 
-const { signup, signIn } = require("../controllers/auth");
+const { signup, signIn, signOut } = require("../controllers/auth");
 
 // sign up route...
 router.post(
@@ -27,5 +27,10 @@ router.post(
     .withMessage("Password should be 8 chars and above"),
   signIn
 );
+
+/**
+ * signOut route ...
+ */
+router.get("/signout", signOut);
 
 module.exports = router;
