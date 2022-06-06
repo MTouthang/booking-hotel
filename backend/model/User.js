@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const { v4: uuidv4 } = require("uuid");
 const crypto = require("crypto");
+const Booking = require("./Booking");
+const { ObjectId } = mongoose.Schema;
 
 const userSchema = new mongoose.Schema(
   {
@@ -23,7 +25,7 @@ const userSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    bookings: {
+    listOfBooking: {
       type: Array,
       default: [],
     },

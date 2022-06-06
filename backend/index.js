@@ -1,12 +1,15 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const cookie = require("cookie-parser");
+const cookieParser = require("cookie-parser");
+
 require("dotenv").config();
 
 // import routes
 const authRoutes = require("./routes/auth");
-const cookieParser = require("cookie-parser");
+const userRoutes = require("./routes/user");
+const hotelRoutes = require("./routes/hotel");
+const bookingRoutes = require("./routes/booking");
 
 const port = process.env.PORT;
 const app = express();
@@ -24,6 +27,9 @@ app.use(cookieParser());
 
 //routes
 app.use("/api", authRoutes);
+app.use("/api", userRoutes);
+app.use("/api", hotelRoutes);
+app.use("/api", bookingRoutes);
 
 app.listen(port, () => {
   console.log(`Server up and Running at: ${port}`);

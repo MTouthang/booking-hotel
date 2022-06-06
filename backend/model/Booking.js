@@ -1,22 +1,23 @@
 const mongoose = require("mongoose");
+const { ObjectId } = mongoose.Schema;
 
-const bookingSchema = mongoose.Schema({
+const BookingSchema = new mongoose.Schema({
+  checkedIn: {
+    type: String,
+    required: true,
+  },
+  checkedOut: {
+    type: String,
+    required: true,
+  },
+  user: {
+    type: ObjectId,
+    ref: "User",
+  },
   hotel: {
-    type: String,
-    required: true,
-  },
-  status: {
-    type: String,
-    required: true,
-    default: "booked",
-  },
-  bookedDate: {
-    type: String,
-    required: true,
-  },
-  booked: {
-    type: [],
+    type: ObjectId,
+    ref: "Hotels",
   },
 });
 
-module.exports = mongoose.model("Book", bookingSchema);
+module.exports = mongoose.model("Booking", BookingSchema);

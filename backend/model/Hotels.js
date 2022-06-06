@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const schema = mongoose.Schema;
+const { ObjectId } = mongoose.Schema;
 
-const hotelSchema = new schema(
+const hotelSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -19,9 +19,8 @@ const hotelSchema = new schema(
     types: {
       type: String,
     },
-    prices: {
-      type: Number,
-      required: true,
+    dailyRate: {
+      type: String,
       trim: true,
     },
     photo: {
