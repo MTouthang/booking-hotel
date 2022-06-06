@@ -22,17 +22,3 @@ exports.getUserById = (req, res) => {
   req.profile.updatedAt = undefined;
   return res.json(req.profile);
 };
-
-// TODO -- Booking stuff
-exports.userBookList = (req, res) => {
-  Booking.find({ user: req.profile._id })
-    .populate("user", "_id name")
-    .exec((err, booking) => {
-      if (err) {
-        return res.status(400).json({
-          error: "No order in this account",
-        });
-      }
-      return res.json(booking);
-    });
-};

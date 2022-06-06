@@ -38,7 +38,7 @@ const NavBar = () => {
               </NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>NameText</NavbarText>
+          <NavbarText>UserName</NavbarText>
         </Collapse>
       </Navbar>
     </div>
