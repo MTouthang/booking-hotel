@@ -6,7 +6,7 @@ const Footer = () => {
     <div>
       <Container
         tag="footer"
-        className="text-center bg-info text-white text-uppercase p-3 fixed-bottom"
+        className="text-center bg-info text-white text-uppercase p-3 mt-5 fixed-bottom"
         fluid
       >
         Develope with ❤ by Mang 2022

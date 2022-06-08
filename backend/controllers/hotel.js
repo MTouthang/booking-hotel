@@ -28,3 +28,14 @@ exports.createHotel = (req, res) => {
     res.json(hotel);
   });
 };
+
+exports.getAllHotels = (req, res) => {
+  Hotel.find().exec((err, hotels) => {
+    if (err) {
+      return res.status(400).json({
+        error: `Cant get all hotels`,
+      });
+    }
+    return res.json(hotels);
+  });
+};

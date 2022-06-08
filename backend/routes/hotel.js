@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { getHotelId, createHotel } = require("../controllers/hotel");
+const {
+  getHotelId,
+  createHotel,
+  getAllHotels,
+} = require("../controllers/hotel");
 const { getUserId } = require("../controllers/user");
 const { isSignedIn, isAuthenticated, isAdmin } = require("../controllers/auth");
 
@@ -14,5 +18,7 @@ router.post(
   isAdmin,
   createHotel
 );
+
+router.get("/hotels", getAllHotels);
 
 module.exports = router;
